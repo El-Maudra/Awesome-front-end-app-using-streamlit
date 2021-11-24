@@ -111,11 +111,11 @@ st.markdown("**cummax - cumret**")
 st.markdown("Longest drawdown requires the dates at which the gross performance equals its cummulative maximum i.e where new maximum is set.")
 
 drawdown = df_spy['cummax'] - df_spy['cumret']
-#print(f'The Maximum Drawdown is: {drawdown.max()}')
+
 temp = drawdown[drawdown==0]
 periods = (temp.index[1:].to_pydatetime() - 
            temp.index[:-1].to_pydatetime())
-#print(f'The Maximum drawdown: {drawdown.max()} \nThe Longest drawdown period: {periods.max()}')
+
 
 drawdown_period = {'Maximum Drawdown':drawdown.max(), 
                    'Longest Drawdown':periods.max()}
